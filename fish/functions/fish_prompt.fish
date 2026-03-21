@@ -11,7 +11,7 @@ function fish_prompt
 	set -g __fish_git_prompt_color_dirtystate red
 	set -g __fish_git_prompt_color_cleanstate green
 	set -g __fish_git_prompt_char_dirtystate '✖︎'
-	set -g __fish_git_prompt_char_cleanstate '●'
+	set -g __fish_git_prompt_char_cleanstate ' ●'
 
 	set -l user_color   cyan
 	set -l host_color   green
