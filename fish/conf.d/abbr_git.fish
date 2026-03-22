@@ -59,7 +59,7 @@ if status is-interactive
 	alias grrm="git remote remove"
 	alias grup="git remote update"
 	alias grst="git restore --staged"
-	alias grm="git remove"
+	alias grm="git rm"
 	alias gstu="git stash --include-untracked"
 	alias gstl="git stash list"
 	alias gstp="git stash pop"
