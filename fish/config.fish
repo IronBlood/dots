@@ -14,4 +14,6 @@ if status is-interactive
 	set -g __fish_git_prompt_char_cleanstate ' ●'
 
 	fish_config theme choose catppuccin-mocha --color-theme=dark
+
+	set -g fish_greeting
 end
