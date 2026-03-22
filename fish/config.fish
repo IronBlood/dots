@@ -11,8 +11,10 @@ if status is-interactive
 
 	set -g __fish_git_prompt_color_branch cyan
 	set -g __fish_git_prompt_color_dirtystate red
+	set -g __fish_git_prompt_color_untrackedfiles red
 	set -g __fish_git_prompt_color_cleanstate green
 	set -g __fish_git_prompt_char_dirtystate '✖︎'
+	set -g __fish_git_prompt_char_untrackedfiles '✖︎'
 	set -g __fish_git_prompt_char_cleanstate ' ●'
 
 	fish_config theme choose catppuccin-mocha --color-theme=dark
