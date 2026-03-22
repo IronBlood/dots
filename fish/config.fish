@@ -1,3 +1,5 @@
+set -gx PATH $HOME/bin $PATH
+
 if status is-interactive
 	set -g fish_prompt_pwd_dir_length 0
 
@@ -18,4 +20,6 @@ if status is-interactive
 	set -g fish_greeting
 
 	nvm use default > /dev/null
+
+	set -gx GPG_TTY (tty)
 end
