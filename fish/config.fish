@@ -23,4 +23,6 @@ if status is-interactive
 	nvm use default > /dev/null
 
 	set -gx GPG_TTY (tty)
+
+	zoxide init fish | source
 end

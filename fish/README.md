@@ -1,6 +1,7 @@
 ## External tools
 
 * [eza](https://github.com/eza-community/eza)
+* [zoxide](https://github.com/ajeetdsouza/zoxide)
 
 ## Fisher
 
