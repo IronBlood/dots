@@ -8,3 +8,6 @@ functions/__bass.py
 functions/bass.fish
 
 fish_variables
+
+# private configurations
+conf.d/private_*.fish

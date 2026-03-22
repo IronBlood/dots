@@ -18,3 +18,15 @@ fisher install "$FISHER_PATH"
 ## Other plugins
 
 - [`bass`](https://github.com/edc/bass)
+
+## Environment Variables
+
+### Rustup
+
+To use a mirror for rustup, store this in `conf.d/private_rustup.fish`:
+
+```fish
+# Use a real mirror instead
+set -gx RUSTUP_DIST_SERVER https://example.com
+set -gx RUSTUP_UPDATE_ROOT https://example.com
+```
