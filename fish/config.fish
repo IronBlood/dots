@@ -11,9 +11,11 @@ if status is-interactive
 
 	set -g __fish_git_prompt_color_branch cyan
 	set -g __fish_git_prompt_color_dirtystate red
+	set -g __fish_git_prompt_color_stagedstate red
 	set -g __fish_git_prompt_color_untrackedfiles red
 	set -g __fish_git_prompt_color_cleanstate green
 	set -g __fish_git_prompt_char_dirtystate '✖︎'
+	set -g __fish_git_prompt_char_stagedstate '✖︎'
 	set -g __fish_git_prompt_char_untrackedfiles '✖︎'
 	set -g __fish_git_prompt_char_cleanstate ' ●'
 
