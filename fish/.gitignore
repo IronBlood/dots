@@ -3,4 +3,8 @@ completions/fisher.fish
 functions/fisher.fish
 fish_plugins
 
+# bass
+functions/__bass.py
+functions/bass.fish
+
 fish_variables
