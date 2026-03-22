@@ -1,3 +1,7 @@
+## External tools
+
+* [eza](https://github.com/eza-community/eza)
+
 ## Fisher
 
 To install `fisher` from github:
