@@ -1,7 +1,11 @@
 set -gx PATH $HOME/bin $PATH
 
-if test -f $HOME/.cargo/bin
-	set -gx PATH $HOME/.cargo/bin $PATH
+set -l cargo_bin $HOME/.cargo/bin
+
+if test -d $cargo_bin
+	if not contains $cargo_bin $PATH
+		set -gx PATH $cargo_bin $PATH
+	end
 end
 
 if status is-interactive
