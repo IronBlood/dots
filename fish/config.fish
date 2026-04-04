@@ -1,7 +1,7 @@
 set -gx PATH $HOME/bin $PATH
 
-if test -f $HOME/.cargo/env.fish
-    source $HOME/.cargo/env.fish
+if test -f $HOME/.cargo/bin
+	set -gx PATH $HOME/.cargo/bin $PATH
 end
 
 if status is-interactive
