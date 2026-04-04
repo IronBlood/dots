@@ -1,5 +1,9 @@
 set -gx PATH $HOME/bin $PATH
 
+if test -f $HOME/.cargo/env.fish
+    source $HOME/.cargo/env.fish
+end
+
 if status is-interactive
 	set -g fish_prompt_pwd_dir_length 0
 
