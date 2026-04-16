@@ -39,4 +39,6 @@ config.force_reverse_video_cursor = true
 -- turn off hyperlinks
 config.hyperlink_rules = {}
 
+config.hide_tab_bar_if_only_one_tab = true
+
 return config
