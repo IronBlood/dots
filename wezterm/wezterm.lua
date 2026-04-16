@@ -2,6 +2,13 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+config.window_padding = {
+	left = 4,
+	right = 4,
+	top = 4,
+	bottom = 4,
+}
+
 config.font = wezterm.font_with_fallback({
 	"JetBrainsMono Nerd Font Mono",
 	"Microsoft YaHei",
