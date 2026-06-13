@@ -3,6 +3,7 @@ function pi-docker
     set -l username (id -un)
 
     docker run --rm -it \
+        --add-host=host.docker.internal:host-gateway \
         -e TERM \
         -e COLORTERM \
         -e TERM_PROGRAM \
