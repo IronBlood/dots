@@ -1,0 +1,22 @@
+function python-bash-docker
+    set -l working_dir (pwd)
+    set -l username (id -un)
+    set -l CARGO_CACHE "$HOME/.cache/coding-agent-image/cargo"
+    set -l MATPLOTLIB_CONFIG "$HOME/.cache/coding-agent-image/matplotlib-config/"
+    set -l MATPLOTLIB_CACHE "$HOME/.cache/coding-agent-image/matplotlib-cache/"
+
+    docker run --rm -it \
+        -e TERM \
+        -e COLORTERM \
+        -e TERM_PROGRAM \
+        -e UV_LINK_MODE=copy \
+        -w "$working_dir" \
+        -v "$working_dir:$working_dir" \
+        -v "$HOME/.config/uv:/home/$username/.config/uv" \
+        -v "$HOME/.cache/uv:/home/$username/.cache/uv" \
+        -v "$CARGO_CACHE:/home/$username/.cargo" \
+        -v "$MATPLOTLIB_CONFIG:/home/$username/.config/matplotlib" \
+        -v "$MATPLOTLIB_CACHE:/home/$username/.cache/matplotlib" \
+        coding-agent-image:local \
+        bash $argv
+end
