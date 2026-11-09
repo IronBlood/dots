@@ -38,6 +38,8 @@ function __ibib_bubble_run
 		--ro-bind /usr /usr \
 		$root_mounts \
 		--ro-bind /etc/ssl /etc/ssl \
+		--ro-bind /etc/passwd /etc/passwd \
+		--ro-bind /etc/group /etc/group \
 		--ro-bind-try /etc/hosts /etc/hosts \
 		--ro-bind-try /etc/nsswitch.conf /etc/nsswitch.conf \
 		--ro-bind (realpath /etc/resolv.conf) /etc/resolv.conf \
