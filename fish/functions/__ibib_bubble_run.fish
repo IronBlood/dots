@@ -47,6 +47,8 @@ function __ibib_bubble_run
 		--dir /run \
 		--ro-bind "$node_prefix" "$node_prefix" \
 		--bind "$sandbox_home" "$sandbox_home" \
+		--ro-bind "$HOME/.oh-my-zsh" "$sandbox_home/.oh-my-zsh" \
+		--ro-bind "$HOME/.zshrc" "$sandbox_home/.zshrc" \
 		--bind "$working_dir" "$working_dir" \
 		$extra_mounts \
 		--setenv HOME "$sandbox_home" \
