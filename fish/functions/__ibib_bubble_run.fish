@@ -55,8 +55,6 @@ function __ibib_bubble_run
 		--setenv COLORTERM "$COLORTERM" \
 		--setenv TERM_PROGRAM "$TERM_PROGRAM" \
 		--setenv LANG C.UTF-8 \
-		--setenv UV_LINK_MODE copy \
-		--setenv UV_CONCURRENT_DOWNLOADS 4 \
 		--chdir "$working_dir" \
 		$argv
 end
