@@ -43,6 +43,7 @@ function __ibib_bubble_run
 		--ro-bind-try /etc/hosts /etc/hosts \
 		--ro-bind-try /etc/nsswitch.conf /etc/nsswitch.conf \
 		--ro-bind (realpath /etc/resolv.conf) /etc/resolv.conf \
+		--ro-bind (realpath /etc/localtime) /etc/localtime \
 		--proc /proc \
 		--dev /dev \
 		--tmpfs /tmp \
