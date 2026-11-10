@@ -12,12 +12,26 @@ function __ibib_bubble_run
 	set -l hf_hub "$HOME/.cache/huggingface/hub"
 	set -l git_dir "$working_dir/.git"
 	set -l extra_mounts
-	set -l node_executable (nvm which current)
-	set -l node_prefix (dirname (dirname "$node_executable"))
+	set -l sandbox_path "/usr/bin:/bin"
 
 	if test -d "$hf_hub"
 		set -a extra_mounts \
 			--ro-bind (realpath "$hf_hub") "$sandbox_home/.cache/huggingface/hub"
+	end
+
+	if type -q nvm
+		set -l node_executable (nvm which current 2>/dev/null)
+
+		if test $status -eq 0; and test (count $node_executable) -eq 1
+			if test -f "$node_executable"; and test -x "$node_executable"
+				set -l node_prefix (dirname (dirname "$node_executable"))
+
+				set -a extra_mounts \
+					--ro-bind "$node_prefix" "$node_prefix"
+
+				set sandbox_path "$node_prefix/bin:$sandbox_path"
+			end
+		end
 	end
 
 	if test -e "$git_dir"
@@ -48,14 +62,13 @@ function __ibib_bubble_run
 		--dev /dev \
 		--tmpfs /tmp \
 		--dir /run \
-		--ro-bind "$node_prefix" "$node_prefix" \
 		--bind "$sandbox_home" "$sandbox_home" \
 		--ro-bind "$HOME/.oh-my-zsh" "$sandbox_home/.oh-my-zsh" \
 		--ro-bind "$HOME/.zshrc" "$sandbox_home/.zshrc" \
 		--bind "$working_dir" "$working_dir" \
 		$extra_mounts \
 		--setenv HOME "$sandbox_home" \
-		--setenv PATH "$node_prefix/bin:/usr/bin:/bin" \
+		--setenv PATH "$sandbox_path" \
 		--setenv TERM "$TERM" \
 		--setenv COLORTERM "$COLORTERM" \
 		--setenv TERM_PROGRAM "$TERM_PROGRAM" \
